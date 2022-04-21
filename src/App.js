@@ -14,6 +14,17 @@ function App() {
   
   const [categories, setCategories] = React.useState([])
 
+  const [apiToken, setApiToken] = React.useState()
+
+
+
+//fetch categories from API
+React.useEffect(() => {   
+  fetch("https://opentdb.com/api_token.php?command=request")
+  .then(response => response.json())
+  .then(response => setApiToken(response.token))
+}, [])
+
   //fetch categories from API
   React.useEffect(() => {   
       fetch("https://opentdb.com/api_category.php")
@@ -28,7 +39,7 @@ function App() {
   let content = ""
   switch(mode){
     case "questions":
-      content = <Questions category={curCategory}/>
+      content = <Questions apiToken={apiToken} category={curCategory}/>
       break;
     case "categories":
       content =  <Categories categories={categories} onSelection={onCategorySelection}/>

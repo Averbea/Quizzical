@@ -21,15 +21,13 @@ button {
   font-family: 'Inter';
 }
 
-button:hover{
+.categories-button:hover, .start-button:hover{
   box-shadow: black 3px 3px 5px;
  }
-button:active{
+ button:active{
  box-shadow: inset black 3px 3px 5px;
 }
-button::selection{
-  background-color: red;
-}
+
 
 .start-screen{
   text-align: center;
@@ -85,4 +83,31 @@ button::selection{
 
 .questions{
   text-align: center;
+  width: 80%;
+  margin:auto;
+  text-align: center;
+}
+
+.answer{
+  column-width: 250px;
+}
+
+.answer, .answer-selected{
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px 10px;
+  width: 200px;
+  height: 60px;
+ 
+}
+
+.answer-selected{
+  border: 2px solid #4D5B9E;
+  background-color: rgba(92, 122, 199, 0.342);
+  color: #4D5B9E;
+}
+.answer{
+  border: 2px solid #4D5B9E;
+  background-color: rgba(0,0,0,0);
+  color: #4D5B9E;
 }

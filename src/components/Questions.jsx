@@ -1,4 +1,6 @@
+import { nanoid } from "nanoid"
 import React from "react"
+import Question from "./Question"
 
 export default function Questions(props){
     const category = props.category
@@ -21,7 +23,7 @@ export default function Questions(props){
         <div className="questions">
             <h1> {category.name}</h1>
             <div>
-                {questions.map((q) => <p>{q.question}</p>)}
+                {questions.map(q => <Question key={nanoid()} question={q}/>)}
             </div>
         </div>
        )

@@ -5,7 +5,7 @@ export default function StartScreen(props){
         <div className="start-screen">
             <h1>Quizzical</h1>
             <p>Try to solve these Random Questions</p>
-            <button onClick={props.onStart}>Start Quiz</button>
+            <button className="start-button" onClick={props.onStart}>Start Quiz</button>
         </div>
     )
 }

@@ -1,5 +1,6 @@
 body {
   margin: 0;
+  width: 100vw;
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -26,6 +27,9 @@ button:hover{
 button:active{
  box-shadow: inset black 3px 3px 5px;
 }
+button::selection{
+  background-color: red;
+}
 
 .start-screen{
   text-align: center;
@@ -34,8 +38,7 @@ button:active{
   justify-content: center;
   align-items: center;
   height: 100vh;
-  transform: translateY(-50%, -50%);
-  border: 2px red solid;
+
 }
 
 .start-screen > h1{
@@ -53,4 +56,33 @@ button:active{
   font-weight: 500;
   font-size: 16px;
   line-height: 19px;
+}
+
+.categories{
+  margin: auto;
+  width: 80%;
+  /* display: grid; */
+  align-items: center;
+  text-align: center;
+}
+
+.categories-button {
+  width: 280px;
+  height: 70px;
+  max-height: 80px;
+  margin: 5px; 
+  border-radius: 5px;
+ }
+
+ .categories-selection{
+   column-width: 280px;
+   /* width: 80%; */
+   margin:auto;
+   align-items: center;
+   text-align: center;
+ }
+
+
+.questions{
+  text-align: center;
 }

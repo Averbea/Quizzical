@@ -1,5 +1,5 @@
 import React from "react";
-
+import "../css/CategoriesScreen.css"
 
 export default function Categories(props){
 

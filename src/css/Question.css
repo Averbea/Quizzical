@@ -1,0 +1,43 @@
+
+.answers{
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.answer:hover, .answer-selected:hover{
+  box-shadow: none;
+}
+
+
+.answer, .answer-selected{
+ 
+    border-radius: 7.71045px;
+    margin: 5px 10px;
+    width: 150px;
+    height: 60px;
+  
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 10.24px;
+    
+    
+    
+    text-align: center;
+    
+    color: #293264;
+
+    column-width: 250px;
+  
+   
+  }
+
+.answer-selected{
+    background: #D6DBF5;
+    border: none;
+  }
+.answer{
+    border: 0.771045px solid #4D5B9E;
+    background-color: transparent;
+}

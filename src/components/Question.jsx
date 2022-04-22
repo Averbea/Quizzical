@@ -1,5 +1,7 @@
 import React from 'react'
 
+import "../css/Question.css"
+
 export default function Question(props){
     const q = props.question
     

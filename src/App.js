@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 import StartScreen from './components/StartScreen';
-import Categories from './components/Categories';
-import Questions from './components/Questions';
+import Categories from './components/CategoriesScreen';
+import Questions from './components/QuestionsScreen';
 
 
 function App() {

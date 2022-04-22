@@ -1,0 +1,25 @@
+
+.questions{
+    text-align: center;
+    width: 80%;
+    margin:auto;
+    text-align: center;
+  }
+  
+
+.questions-check{
+    border-radius: 6px;
+    width: 200px;
+    height: 70px;
+  
+    margin: 50px;
+  }
+
+.questions-row{
+    border: 0.794239px solid #DBDEF0;
+    background-color: #DBDEF0;
+    width: 100%;
+    max-width: 1000px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}

@@ -1,0 +1,24 @@
+.categories{
+    margin: auto;
+    width: 80%;
+    /* display: grid; */
+    align-items: center;
+    text-align: center;
+  }
+  
+  .categories-button {
+    width: 280px;
+    height: 70px;
+    max-height: 80px;
+    margin: 5px; 
+    border-radius: 5px;
+   }
+  
+   .categories-selection{
+     column-width: 280px;
+     /* width: 80%; */
+     margin:auto;
+     align-items: center;
+     text-align: center;
+   }
+  

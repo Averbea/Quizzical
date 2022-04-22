@@ -5,32 +5,39 @@ import Question from "./Question"
 import "../css/QuestionsScreen.css"
 
 
-export default function Questions(props){
+export default function QuestionsScreen(props){
     const category = props.category
     const amount = 10
     
     const [questions, setQuestions ] = React.useState([])
+    const [checking, setChecking] = React.useState(false)
 
     React.useEffect(() =>{
-        getNewQuestions()
-    },[])
+        async function getNewQuestions(){
+            fetch(`https://opentdb.com/api.php?category=${category.id}&amount=${amount}&type=multiple&token=${props.apiToken}`)
+            .then(res => res.json())
+            .then(res => setQuestions(res.results))
+        }   
 
-    function getNewQuestions(){
-        fetch(`https://opentdb.com/api.php?category=${category.id}&amount=${amount}&type=multiple&token=${props.apiToken}`)
-        .then(res => res.json())
-        .then(res => setQuestions(res.results))
-    }
+       getNewQuestions()
+    },[category.id, props.apiToken])
 
+   
 
-    const questionElements = []
-    for(let i = 0; i < questions.length; i++){
-        questionElements.push(<Question key={nanoid()} question={questions[i]}/>)
-        if(i !== questions.length -1){
-            questionElements.push(<hr className="questions-row"/>)
+    function checkQuestions(){
+        if(!checking){
+            setChecking(true)
         }
     }
 
-    console.log(questions)
+    const questionElements = []
+    for(let i = 0; i < questions.length; i++){
+        questionElements.push(<Question key={i} checking={checking} question={questions[i]}/>)
+        if(i !== questions.length -1){
+            questionElements.push(<hr key={nanoid()} className="questions-row"/>)
+        }
+    }
+
     return (
         <div className="questions">
             <h1> {category.name}</h1>
@@ -38,7 +45,7 @@ export default function Questions(props){
                 {questionElements}
             </div> 
             
-            <button className="questions-check">Check Answers</button>
+            <button onClick={checkQuestions} className="questions-check">Check Answers</button>
         </div>
        )
 }

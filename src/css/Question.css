@@ -33,11 +33,27 @@
    
   }
 
-.answer-selected{
-    background: #D6DBF5;
-    border: none;
-  }
 .answer{
     border: 0.771045px solid #4D5B9E;
     background-color: transparent;
+}
+
+
+.answer-selected{
+  background: #D6DBF5;
+  border: none;
+}
+
+.answer-correct{
+  background-color: #94D7A2;
+}
+
+.answer-wrong{
+  background: #F8BCBC;
+  color: #293264;
+}
+
+.answer-else{
+  border-color: #4D5B9E;
+  color: #293264;
 }

@@ -1,6 +1,7 @@
 .App {
   /* text-align: center; */
   background-image: url(./question-marks.jpg);
+  min-height: 100vh;
 }
 
 /* .App::after {

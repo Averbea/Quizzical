@@ -56,8 +56,9 @@ function restart(){
 
  
   return (
-    content
-   
+    <div className='App'>
+      {content}
+    </div>
 
     // <div className="App">
     //   <header className="App-header">

@@ -8,7 +8,7 @@ export default function CategoriesScreen(props){
     return (
         <div className="categories">
             <h1>Categories</h1>
-            <p>Select a categorie to generate some Questions</p> 
+            <p>Select a category to generate some Questions</p> 
              
             <div className="categories-selection">
                 {props.categories.map(cat => 

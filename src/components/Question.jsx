@@ -19,6 +19,7 @@ export default function Question(props){
     function parseText(text){
         return parser.parseFromString(text, 'text/html').body.textContent
     }
+
     
     const parser = new DOMParser()
     const parsedQuestion = parseText(q.question)
@@ -30,6 +31,10 @@ export default function Question(props){
         let className = "answer"
         // console.log(q.correct_answer + " : " + a)
         if(props.checking){
+            if(selected !== a){
+                className += ' answer-not-selected'
+            }
+
             if(q.correct_answer === a){
                 className += ' answer-correct'
             }
@@ -41,13 +46,13 @@ export default function Question(props){
             }
         }
         else if(selected === a ){
-            className = 'answer-selected'
+            className += ' answer-selected'
         }
 
         answersElements[answersOrder[i]]=(
             <button key={a}
                     className={className} 
-                    onClick={() => setSelected(a)}>
+                    onClick={() => !props.checking && setSelected(a)}>
                 {parseText(a)}
             </button>
         )

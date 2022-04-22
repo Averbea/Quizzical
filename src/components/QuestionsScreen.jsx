@@ -27,6 +27,15 @@ export default function QuestionsScreen(props){
     function checkQuestions(){
         if(!checking){
             setChecking(true)
+            window.scrollTo(
+                {
+                    top: 0, 
+                    behavior:"smooth"
+                }
+            )
+        }else{
+            //restart
+            props.restart() 
         }
     }
 
@@ -45,7 +54,7 @@ export default function QuestionsScreen(props){
                 {questionElements}
             </div> 
             
-            <button onClick={checkQuestions} className="questions-check">Check Answers</button>
+            <button onClick={checkQuestions} className="questions-check">{checking ? "Restart" : "Check your answers"}</button>
         </div>
        )
 }

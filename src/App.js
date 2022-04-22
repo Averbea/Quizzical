@@ -36,10 +36,16 @@ React.useEffect(() => {
     setCurCategory(category)
     setMode("questions")
   }
+
+function restart(){
+    setMode("start")
+}
+
+
   let content = ""
   switch(mode){
     case "questions":
-      content = <Questions apiToken={apiToken} category={curCategory}/>
+      content = <Questions restart={restart} apiToken={apiToken} category={curCategory}/>
       break;
     case "categories":
       content =  <Categories categories={categories} onSelection={onCategorySelection}/>

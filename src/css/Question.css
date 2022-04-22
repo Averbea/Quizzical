@@ -38,12 +38,13 @@
     background-color: transparent;
 }
 
-
 .answer-selected{
   background: #D6DBF5;
   border: none;
 }
 
+
+/* These are used while checking answers */
 .answer-correct{
   background-color: #94D7A2;
 }
@@ -53,7 +54,13 @@
   color: #293264;
 }
 
+.answer-not-selected{
+  opacity: 0.5;
+}
+
+
 .answer-else{
   border-color: #4D5B9E;
   color: #293264;
 }
+

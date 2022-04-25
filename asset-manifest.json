@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Quizzical/static/css/main.a67730aa.css",
-    "main.js": "/Quizzical/static/js/main.b2a2707a.js",
+    "main.css": "/Quizzical/static/css/main.dfdfe514.css",
+    "main.js": "/Quizzical/static/js/main.bed92693.js",
     "static/js/787.fa62f795.chunk.js": "/Quizzical/static/js/787.fa62f795.chunk.js",
     "static/media/question-marks.jpg": "/Quizzical/static/media/question-marks.3c3fde4c58b0153d1e96.jpg",
     "static/media/logo.svg": "/Quizzical/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/Quizzical/index.html",
-    "main.a67730aa.css.map": "/Quizzical/static/css/main.a67730aa.css.map",
-    "main.b2a2707a.js.map": "/Quizzical/static/js/main.b2a2707a.js.map",
+    "main.dfdfe514.css.map": "/Quizzical/static/css/main.dfdfe514.css.map",
+    "main.bed92693.js.map": "/Quizzical/static/js/main.bed92693.js.map",
     "787.fa62f795.chunk.js.map": "/Quizzical/static/js/787.fa62f795.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.a67730aa.css",
-    "static/js/main.b2a2707a.js"
+    "static/css/main.dfdfe514.css",
+    "static/js/main.bed92693.js"
   ]
 }

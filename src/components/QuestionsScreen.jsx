@@ -33,21 +33,25 @@ export default function QuestionsScreen(props){
     function checkQuestions(){
         if(!checking){
             setChecking(true)
-            window.scrollTo(
-                {
-                    top: 0, 
-                    behavior:"smooth"
-                }
-            )
+            props.finishQuestioning(answerCorrect.filter((val ) => val === true).length, amount)
         }else{
             //restart
             props.restart() 
         }
+
+        window.scrollTo(
+            {
+                top: 0, 
+                behavior:"smooth"
+            }
+        )
     }
 
     function onAnswerSelected(index, correct){
         setAnswerCorrect(prev => prev.map((val, i) => index === i ? correct: val ))
     }
+
+
     
 
     const questionElements = []

@@ -16,7 +16,7 @@ function App() {
 
   const [apiToken, setApiToken] = React.useState()
 
-
+  const [history, setHistory] = React.useState([])
 
 //fetch categories from API
 React.useEffect(() => {   
@@ -37,21 +37,29 @@ React.useEffect(() => {
     setMode("questions")
   }
 
-function restart(){
-    setMode("start")
-}
+  function restart(){
+      setMode("start")
+  }
 
+  function addHistoryEntry(correct, total){
+    let newEntry = {
+      correct, 
+      total,
+      time: (new Date()).toLocaleString("en-US")
+    }
+    setHistory(prev => [ newEntry, ...prev])
+  }
 
   let content = ""
   switch(mode){
     case "questions":
-      content = <Questions restart={restart} apiToken={apiToken} category={curCategory}/>
+      content = <Questions finishQuestioning={addHistoryEntry} restart={restart} apiToken={apiToken} category={curCategory}/>
       break;
     case "categories":
       content =  <Categories categories={categories} onSelection={onCategorySelection}/>
       break;
     default:
-      content = <StartScreen onStart={() => setMode("categories")}/>
+      content = <StartScreen onStart={() => setMode("categories")} history={history}/>
   }
 
  

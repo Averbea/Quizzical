@@ -20,7 +20,12 @@ export default function Question(props){
         return parser.parseFromString(text, 'text/html').body.textContent
     }
 
-    
+    function select(answer){
+        if(props.checking) return
+        setSelected(answer)
+        props.updateCorrectAnswerSelected(answer === q.correct_answer);
+    }
+
     const parser = new DOMParser()
     const parsedQuestion = parseText(q.question)
     
@@ -52,16 +57,30 @@ export default function Question(props){
         answersElements[answersOrder[i]]=(
             <button key={a}
                     className={className} 
-                    onClick={() => !props.checking && setSelected(a)}>
+                    onClick={() => select(a)}>
                 {parseText(a)}
             </button>
         )
     }
-        
+    
+    const difficulty = q.difficulty
+
+    let difficultyColor = ""
+    switch(difficulty){
+        case "easy": 
+            difficultyColor = "#85ff59"
+            break;
+        case "medium":
+            difficultyColor = "#fff459"
+            break;
+       default: 
+            difficultyColor = "#ff5959"
+    }
 
     return (
         <div className='question'>
-            <h3>{parsedQuestion}</h3>
+            <h3 className='question-sentence'>{parsedQuestion}</h3>
+            <p style={{backgroundColor:difficultyColor}} className="difficulty">{q.difficulty}</p>
             <div className='answers'>
                {answersElements }
             </div>

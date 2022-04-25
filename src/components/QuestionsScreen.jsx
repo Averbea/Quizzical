@@ -7,10 +7,16 @@ import "../css/QuestionsScreen.css"
 
 export default function QuestionsScreen(props){
     const category = props.category
-    const amount = 10
+    const amount = 5
     
     const [questions, setQuestions ] = React.useState([])
     const [checking, setChecking] = React.useState(false)
+    const [answerCorrect, setAnswerCorrect] = React.useState(() => {
+        let tmp = Array(amount)
+        tmp.fill(false)
+        return tmp
+    })
+
 
     React.useEffect(() =>{
         async function getNewQuestions(){
@@ -39,13 +45,20 @@ export default function QuestionsScreen(props){
         }
     }
 
+    function onAnswerSelected(index, correct){
+        setAnswerCorrect(prev => prev.map((val, i) => index === i ? correct: val ))
+    }
+    
+
     const questionElements = []
     for(let i = 0; i < questions.length; i++){
-        questionElements.push(<Question key={i} checking={checking} question={questions[i]}/>)
+        questionElements.push(<Question key={i} checking={checking} question={questions[i]} updateCorrectAnswerSelected={(val) => onAnswerSelected(i, val)}/>)
         if(i !== questions.length -1){
             questionElements.push(<hr key={nanoid()} className="questions-row"/>)
         }
     }
+    
+    let numCorrect = answerCorrect.filter((val ) => val === true).length
 
     return (
         <div className="questions">
@@ -53,7 +66,9 @@ export default function QuestionsScreen(props){
             <div>
                 {questionElements}
             </div> 
-            
+            {checking && <h2 className="questions-finish">
+                You answered {numCorrect}/{amount} correctly!
+            </h2>}
             <button onClick={checkQuestions} className="questions-check">{checking ? "Restart" : "Check your answers"}</button>
         </div>
        )

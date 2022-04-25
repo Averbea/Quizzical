@@ -15,7 +15,7 @@
     border-radius: 7.71045px;
     margin: 5px 10px;
     width: 150px;
-    height: 60px;
+    min-height: 60px;
   
     font-family: 'Inter';
     font-style: normal;
@@ -64,3 +64,24 @@
   color: #293264;
 }
 
+
+.difficulty{
+  border-radius: 5px;
+  margin:auto;
+  width:100px;
+  margin-bottom: 10px;
+  margin-top: 0;
+
+  color:white;
+  font-size:12px;
+  padding: 2px 0px
+}
+
+
+.question-sentence{
+  margin-bottom:10px;
+}
+
+.questions-finish{
+  margin-bottom: -20px;
+}
